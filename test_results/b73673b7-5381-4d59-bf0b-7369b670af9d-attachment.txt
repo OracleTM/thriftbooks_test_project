@@ -1,0 +1,43 @@
+
+Start Test
+
+Current url https://www.thriftbooks.com/account/login/
+Input email
+Input password
+Clock login button
+Current url https://www.thriftbooks.com/
+Click books filter
+Click manga categories
+Current url https://www.thriftbooks.com/b/manga/
+Click Attack on Titan
+Current url https://www.thriftbooks.com/series/attack-on-titan/60735/
+Saved text: Attack on Titan, Vol. 1
+Click Attack on Titan, Vol. 1
+Current url https://www.thriftbooks.com/w/attack-on-titan-vol-1_hajime-isayama/1034983/#edition=6718835&idiq=4494620
+Titles assert true
+Saved text: Attack on Titan 1
+Saved text: 5.19
+Add book in cart
+Click continue shopping button
+Click cart button
+Current url https://www.thriftbooks.com/shopping-cart/
+Title Attack on Titan 1 assert Attack on Titan 1 true
+Price $5.19 assert $5.19 true
+Click checkout button
+Current url https://www.thriftbooks.com/checkout/shipping/
+Input first name Melinda
+Input last name Smith
+Input address 805 Chavez Club
+Input city West Joseph
+Input zip 27866
+Click Colorado State
+Click Continue Payment Button
+Click Unverified Address Button
+Saved text: $7.67
+Current url https://www.thriftbooks.com/checkout/payment/
+Good value url
+Good value text
+Estimated total assert true
+Save screenshot
+
+Finish Test

@@ -1,0 +1,88 @@
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-09-03 20:31:35.197216
+Start name method: authorization
+
+End time: 2025-09-03 20:31:47.721676
+End name method: authorization
+URL: https://www.thriftbooks.com/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-09-03 20:31:47.722195
+Start name method: select_manga
+
+End time: 2025-09-03 20:31:53.675020
+End name method: select_manga
+URL: https://www.thriftbooks.com/b/manga/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-09-03 20:31:53.675020
+Start name method: select_attack_on_titan_in_filter
+
+End time: 2025-09-03 20:32:00.033834
+End name method: select_attack_on_titan_in_filter
+URL: https://www.thriftbooks.com/series/attack-on-titan/60735/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-09-03 20:32:00.033834
+Start name method: choosing_the_first_book_attack_on_titans
+
+End time: 2025-09-03 20:32:03.605201
+End name method: choosing_the_first_book_attack_on_titans
+URL: https://www.thriftbooks.com/w/attack-on-titan-vol-1_hajime-isayama/1034983/#edition=6718835&idiq=4494620
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-09-03 20:32:03.606204
+Start name method: add_cart_book
+
+End time: 2025-09-03 20:32:12.822374
+End name method: add_cart_book
+URL: https://www.thriftbooks.com/shopping-cart/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-09-03 20:32:12.823459
+Start name method: checkout_book_click
+
+End time: 2025-09-03 20:32:16.799653
+End name method: checkout_book_click
+URL: https://www.thriftbooks.com/checkout/shipping/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-09-03 20:32:16.800176
+Start name method: filling_information
+
+End time: 2025-09-03 20:32:20.324120
+End name method: filling_information
+URL: https://www.thriftbooks.com/checkout/payment/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-09-03 20:32:20.324914
+Start name method: payment_finish_actions
+
+End time: 2025-09-03 20:32:20.519420
+End name method: payment_finish_actions
+URL: https://www.thriftbooks.com/checkout/payment/
+
+-----
