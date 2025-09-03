@@ -1,4 +1,4 @@
-
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import  expected_conditions as EC
@@ -6,6 +6,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 from base.base_class import Base
+from utilities.logger import Logger
+
 
 class MainPage(Base):
 
@@ -37,7 +39,11 @@ class MainPage(Base):
 
     # Methods
 
-    def actions_main_page(self):
-        self.get_current_url()
-        self.hover_books_filter()
-        self.click_manga_categories()
+    """Selecting manga in the filter"""
+    def select_manga(self):
+        with allure.step("Selecting manga in the filter"):
+            Logger.add_start_step(method="select_manga")
+            self.get_current_url()
+            self.hover_books_filter()
+            self.click_manga_categories()
+            Logger.add_end_step(url=self.driver.current_url, method="select_manga")

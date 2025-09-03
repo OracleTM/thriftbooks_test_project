@@ -1,4 +1,4 @@
-
+import allure
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -6,6 +6,8 @@ from selenium.webdriver.support import  expected_conditions as EC
 
 
 from base.base_class import Base
+from utilities.logger import Logger
+
 
 class CartPage(Base):
 
@@ -52,7 +54,11 @@ class CartPage(Base):
 
     # Methods
 
+    """Checking headlines, prices, and clicking on checkout"""
     def checkout_book_click(self):
-        self.get_current_url()
-        self.compare_titles_and_price()
-        self.click_checkout_button()
+        with allure.step("Checking headlines, prices, and clicking on checkout"):
+            Logger.add_start_step(method="checkout_book_click")
+            self.get_current_url()
+            self.compare_titles_and_price()
+            self.click_checkout_button()
+            Logger.add_end_step(url=self.driver.current_url, method="checkout_book_click")

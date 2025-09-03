@@ -1,10 +1,12 @@
-
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import  expected_conditions as EC
 
 
 from base.base_class import Base
+from utilities.logger import Logger
+
 
 class MangaPage(Base):
 
@@ -28,6 +30,10 @@ class MangaPage(Base):
 
     # Methods
 
-    def actions_manga_page(self):
-        self.get_current_url()
-        self.click_attack_on_titan()
+    """Select Attack of the Titans in the filter"""
+    def select_attack_on_titan_in_filter(self):
+        with allure.step("Select Attack of the Titans in the filter"):
+            Logger.add_start_step(method="select_attack_on_titan_in_filter")
+            self.get_current_url()
+            self.click_attack_on_titan()
+            Logger.add_end_step(url=self.driver.current_url, method="select_attack_on_titan_in_filter")

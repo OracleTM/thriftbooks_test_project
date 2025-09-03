@@ -1,4 +1,4 @@
-
+import allure
 from faker import Faker
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
@@ -7,6 +7,8 @@ from selenium.webdriver.support import  expected_conditions as EC
 
 
 from base.base_class import Base
+from utilities.logger import Logger
+
 
 class CheckoutPage(Base):
 
@@ -110,23 +112,27 @@ class CheckoutPage(Base):
 
     # Methods
 
-    def checkout_actions(self):
-        self.get_current_url()
-        def main_steps():
-            self.input_first_name(self.faker_first_name)
-            self.input_last_name(self.faker_last_name)
-            self.input_address(self.faker_address)
-            self.input_city(self.faker_city)
-            self.input_postal_zip(self.faker_zip)
-            self.click_state_colorado()
-            self.click_continue_payment()
-            self.click_unverified_address_button()
-            self.save_text('estimated_total_checkout', self.get_estimated_total())
-        try:
-            if self.get_new_shipping_address():
-                self.click_new_shipping_address()
+    """Filling in information using Faker"""
+    def filling_information(self):
+        with allure.step("Filling in information using Faker"):
+            Logger.add_start_step(method="filling_information")
+            self.get_current_url()
+            def main_steps():
+                self.input_first_name(self.faker_first_name)
+                self.input_last_name(self.faker_last_name)
+                self.input_address(self.faker_address)
+                self.input_city(self.faker_city)
+                self.input_postal_zip(self.faker_zip)
+                self.click_state_colorado()
+                self.click_continue_payment()
+                self.click_unverified_address_button()
+                self.save_text('estimated_total_checkout', self.get_estimated_total())
+            try:
+                if self.get_new_shipping_address():
+                    self.click_new_shipping_address()
+                    main_steps()
+                else:
+                    main_steps()
+            except TimeoutException:
                 main_steps()
-            else:
-                main_steps()
-        except TimeoutException:
-            main_steps()
+            Logger.add_end_step(url=self.driver.current_url, method="filling_information")

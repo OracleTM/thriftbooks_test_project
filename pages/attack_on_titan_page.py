@@ -1,10 +1,12 @@
-
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import  expected_conditions as EC
 
 
 from base.base_class import Base
+from utilities.logger import Logger
+
 
 class AttackOnTitanPage(Base):
 
@@ -28,7 +30,11 @@ class AttackOnTitanPage(Base):
 
     # Methods
 
-    def actions_attack_on_titan_page(self):
-        self.get_current_url()
-        self.save_text('Attack on Titan, Vol. 1', self.get_attack_on_titan_vol_1().text)
-        self.click_attack_on_titan_vol_1()
+    """Choosing the first book Attack of the Titans"""
+    def choosing_the_first_book_attack_on_titans(self):
+        with allure.step("Choosing the first book Attack of the Titans"):
+            Logger.add_start_step(method="choosing_the_first_book_attack_on_titans")
+            self.get_current_url()
+            self.save_text('Attack on Titan, Vol. 1', self.get_attack_on_titan_vol_1().text)
+            self.click_attack_on_titan_vol_1()
+            Logger.add_end_step(url=self.driver.current_url, method="choosing_the_first_book_attack_on_titans")
